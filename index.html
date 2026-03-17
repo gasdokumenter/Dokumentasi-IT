@@ -21,7 +21,20 @@
       background-image: url('background.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: 100% 100% !important;
+      background-size: cover !important; /* Mencoba menutupi layar secara proporsional */
+}
+
+/* JIKA MASIH BELUM FULL, GUNAKAN TRICK DI BAWAH INI */
+@media screen and (orientation: landscape) {
+  #splash-screen {
+    background-size: 100% 100% !important;
+  }
+}
+@media screen and (orientation: portrait) {
+  #splash-screen {
+    background-size: auto 100% !important; /* Memastikan tinggi penuh */
+  }
+}
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       z-index: 9999;
       transition: opacity 0.5s ease, visibility 0.5s;
