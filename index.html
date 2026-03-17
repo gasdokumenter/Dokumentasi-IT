@@ -19,36 +19,28 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Pakai unit vw (viewport width) */
-  height: 100vh; /* Pakai unit vh (viewport height) */
-  background-image: url('background-baru.svg');
+  width: 100vw; /* Lebar penuh layar */
+  height: 100vh; /* Tinggi penuh layar */
+  
+  /* Ganti dengan nama file baru kamu */
+  background-image: url('background-baru.svg'); 
+  
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100% !important; /* Paksa stretch ke semua sudut */
+  background-position: center center;
+  
+  /* INI KUNCINYA UNTUK PAKSA STRETCH */
+  background-size: 100% 100% !important; 
+  
+  /* Tambahan untuk memastikan tidak ada sisa ruang di browser mobile */
+  object-fit: fill; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s;
 }
-      /* MENGGUNAKAN FILE LOKAL */
-      background-image: url('background.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover !important; /* Mencoba menutupi layar secara proporsional */
-}
-
-/* JIKA MASIH BELUM FULL, GUNAKAN TRICK DI BAWAH INI */
-@media screen and (orientation: landscape) {
-  #splash-screen {
-    background-size: 100% 100% !important;
-  }
-}
-@media screen and (orientation: portrait) {
-  #splash-screen {
-    background-size: auto 100% !important; /* Memastikan tinggi penuh */
-  }
-}
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s;
-    }
 
     .brand-wrapper { display: flex; align-items: center; gap: 12px; z-index: 10; margin-top: -30px; }
     .logo-container { position: relative; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; }
