@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gas-dokumenter-v6';
+const CACHE_NAME = 'gas-dokumenter-v7';
 
 // Daftar semua file yang ada di foldermu agar langsung tersimpan di cache HP
 const assetsToCache = [
